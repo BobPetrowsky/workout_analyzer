@@ -28,4 +28,22 @@ def load_workout_data(filename)
   workouts
 end
 
-# YOUR CODE HERE
+data = load_workout_data("workouts.csv")
+
+workouts = []
+
+data.each do |workout_data|
+  workouts << Workout.new(workout_data)
+end
+
+workouts.each do |workout|
+  puts [workout.id, workout.date, workout.type, workout.calories_burned, workout.total_duration_in_min].join("\t")
+end
+
+w = Workout.new(data)
+
+binding.pry
+
+
+
+
